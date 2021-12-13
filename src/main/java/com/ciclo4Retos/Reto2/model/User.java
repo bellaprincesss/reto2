@@ -6,11 +6,15 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ *
+ * @author Nadia
+ * @version 11.0.12
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "users")
-
 public class User {
 
     @Id

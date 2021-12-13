@@ -9,6 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+/**
+ *
+ * @author Nadia
+ */
 @Component
 @SpringBootApplication
 //@EnableConfigurationProperties
