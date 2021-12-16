@@ -26,7 +26,7 @@ public class UserRepository {
         return userCrudRepository.findById(id);
     }
 
-    public User save(User user){
+    public User create(User user){
         return userCrudRepository.save(user);
     }
 
@@ -40,14 +40,14 @@ public class UserRepository {
 
     public boolean emailExists(String email){
         Optional<User> user = userCrudRepository.findByEmail(email);
-        return user.isPresent();
+        return !user.isEmpty();
     }
 
     public Optional<User> authenticateUser (String email, String password){
         return userCrudRepository.findByEmailAndPassword(email, password);
     }
 
-    public Optional<User> getUserByNameOrEmail(String name, String email){
-        return userCrudRepository.findByNameOrEmail(name, email);
-    }
+    //public Optional<User> getUserByNameOrEmail(String name, String email){
+    //    return userCrudRepository.findByNameOrEmail(name, email);
+    //}
 }

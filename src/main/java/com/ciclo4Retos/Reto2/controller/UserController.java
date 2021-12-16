@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -26,10 +27,15 @@ public class UserController {
         return userService.getAll();
     }
 
+    @GetMapping("/{id}")
+    public Optional<User> getUser(@PathVariable("id") Integer id) {
+        return userService.getUser(id);
+    }
+
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody User user){
-        userService.save(user);
+    public User create(@RequestBody User user){
+        return userService.create(user);
     }
 
     @PutMapping("/update")

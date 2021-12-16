@@ -34,14 +34,14 @@ public class FootwearsController {
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public void create(@RequestBody Footwears gadget){
-        footwearsService.save(gadget);
+    public Footwears create(@RequestBody Footwears gadget){
+        return footwearsService.create(gadget);
     }
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Footwears update(@RequestBody Footwears gadget){
-        return  footwearsService.save(gadget);
+        return  footwearsService.update(gadget);
     }
 
     @DeleteMapping("/{reference}")

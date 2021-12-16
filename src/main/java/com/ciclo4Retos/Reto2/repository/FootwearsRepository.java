@@ -23,8 +23,8 @@ public class FootwearsRepository {
         return footwearsCrudRepository.findAll();
     }
 
-    public Optional<Footwears> getFootwears(String id) {
-        return footwearsCrudRepository.findById(id);
+    public Optional<Footwears> getFootwears(String reference) {
+        return footwearsCrudRepository.findById(reference);
     }
     public Footwears create(Footwears footwears) {
         return footwearsCrudRepository.save(footwears);

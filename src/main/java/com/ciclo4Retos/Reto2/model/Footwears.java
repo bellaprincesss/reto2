@@ -29,6 +29,5 @@ public class Footwears {
     private double price;
     private int quantity;
     private String photography;
-
 }
 

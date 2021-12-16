@@ -1,6 +1,7 @@
 package com.ciclo4Retos.Reto2;
 
 import com.ciclo4Retos.Reto2.repository.crud.FootwearsCrudRepository;
+import com.ciclo4Retos.Reto2.repository.crud.OrderCrudRepository;
 import com.ciclo4Retos.Reto2.repository.crud.UserCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -22,6 +23,8 @@ public class Reto2Application implements CommandLineRunner{
 	private FootwearsCrudRepository footwearsCrudRepository;
 	@Autowired
 	private UserCrudRepository userCrudRepository;
+	@Autowired
+	private OrderCrudRepository orderCrudRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Reto2Application.class, args);
@@ -31,5 +34,6 @@ public class Reto2Application implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		footwearsCrudRepository.deleteAll();
 		userCrudRepository.deleteAll();
+		orderCrudRepository.deleteAll();
 	}
 }

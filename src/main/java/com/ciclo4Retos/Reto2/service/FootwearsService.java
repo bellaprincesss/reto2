@@ -27,7 +27,7 @@ public class FootwearsService {
         return footwearsRepository.getFootwears(reference);
     }
 
-    public Footwears save(Footwears footwears) {
+    public Footwears create(Footwears footwears) {
         if (footwears.getReference() == null) {
             return footwears;
         } else {
@@ -36,7 +36,6 @@ public class FootwearsService {
     }
 
     public Footwears update(Footwears footwears) {
-
         if (footwears.getReference() != null) {
             Optional<Footwears> dbFootwears = footwearsRepository.getFootwears(footwears.getReference());
             if (!dbFootwears.isEmpty()) {
