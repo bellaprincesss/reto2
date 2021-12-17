@@ -73,14 +73,25 @@ public class OrderService {
     }
 
     public boolean delete(Integer id){
-        Boolean aBoolean = getOrder(id).map(order -> {
+        return getOrder(id).map(order -> {
             orderRepository.delete(order);
             return true;
         }).orElse(false);
-        return aBoolean;
     }
 
     public List<Order> getOrderByZone(String zone){
         return orderRepository.getOrderByZone(zone);
+    }
+
+    public List<Order> getOrderBySalesManId(Integer salesManId){
+        return orderRepository.getOrderBySalesManId(salesManId);
+    }
+
+    public List<Order> getOrderByStatusAndSalesManId(String status, Integer salesManId){
+        return orderRepository.getOrderByStatusAndSalesManId(status, salesManId);
+    }
+
+    public List<Order> getOrderByRegisterDayAndSalesManId(String registerDay, Integer salesManId){
+        return orderRepository.getOrderByRegisterDayAndSalesManId(registerDay, salesManId);
     }
 }

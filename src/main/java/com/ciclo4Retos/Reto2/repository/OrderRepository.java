@@ -5,6 +5,9 @@ import com.ciclo4Retos.Reto2.repository.crud.OrderCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,5 +43,23 @@ public class OrderRepository {
 
     public List<Order> getOrderByZone(String zone){
         return orderCrudRepository.findBySalesManZone(zone);
+    }
+
+    public List<Order> getOrderBySalesManId(Integer salesManId){
+        return orderCrudRepository.findBySalesManId(salesManId);
+    }
+
+    public List<Order> getOrderByStatusAndSalesManId(String status, Integer salesManId){
+        return orderCrudRepository.findByStatusAndSalesManId(status, salesManId);
+    }
+
+    public List<Order> getOrderByRegisterDayAndSalesManId(String registerDay, Integer salesManId){
+        try {
+            return orderCrudRepository.findByRegisterDayAndSalesManId(new SimpleDateFormat("yyyy-MM-dd").parse(registerDay), salesManId);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 }
