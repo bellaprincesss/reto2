@@ -37,4 +37,12 @@ public class FootwearsRepository {
     public void delete(Footwears footwears) {
         footwearsCrudRepository.delete(footwears);
     }
+
+    public List<Footwears> getByPrice(double price){
+        return footwearsCrudRepository.findByPrice(price);
+    }
+
+    public List<Footwears> getByDescriptionContains(String description){
+        return footwearsCrudRepository.findByDescriptionContainingIgnoreCase(description);
+    }
 }

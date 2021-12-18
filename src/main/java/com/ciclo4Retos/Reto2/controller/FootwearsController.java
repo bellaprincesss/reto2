@@ -50,4 +50,13 @@ public class FootwearsController {
         return  footwearsService.delete(reference);
     }
 
+    @GetMapping("/price/{price}")
+    public List<Footwears> getByPrice(@PathVariable("price") double price){
+        return footwearsService.getByPrice(price);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<Footwears> getByDescriptionContains(@PathVariable("description") String description){
+        return footwearsService.getByDescriptionContains(description);
+    }
 }

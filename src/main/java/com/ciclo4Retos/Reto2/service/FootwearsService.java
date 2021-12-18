@@ -91,4 +91,12 @@ public class FootwearsService {
         }).orElse(false);
         return aBoolean;
     }
+
+    public List<Footwears> getByPrice(double price){
+        return footwearsRepository.getByPrice(price);
+    }
+
+    public List<Footwears> getByDescriptionContains(String description){
+        return footwearsRepository.getByDescriptionContains(description);
+    }
 }
