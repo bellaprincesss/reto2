@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  *
- * @author Nadia
+ * @author 
  * @version 11.0.12
  */
 public interface FootwearsCrudRepository extends MongoRepository<Footwears, String> {
