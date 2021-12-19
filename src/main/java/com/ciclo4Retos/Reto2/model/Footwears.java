@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
- * @author Nadia
+ * @author 
  * @version 11.0.12
  */
 @Data
